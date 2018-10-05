@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 [RequireComponent(typeof(SteamVR_TrackedObject))]
 public class HandController : MonoBehaviour
