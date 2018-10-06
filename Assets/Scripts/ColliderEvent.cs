@@ -15,6 +15,8 @@ public class ColliderEvent : MonoBehaviour
     Hand handController;
     State state = State.None;
 
+    public Part part;
+
     bool isValid
     {
         get
@@ -51,6 +53,7 @@ public class ColliderEvent : MonoBehaviour
                 fx.connectedBody = null;
                 Destroy(fx);
                 state = State.None;
+                part = null;
                 Debug.Log("HoldingInstrument -> None");
             }
         }
@@ -61,6 +64,17 @@ public class ColliderEvent : MonoBehaviour
         if (!isValid)
         {
             return;
+        }
+
+        if (other.gameObject.layer == LayerMask.NameToLayer("Parts") && part != null)
+        {
+            FixedPart fixedPart = other.GetComponent<FixedPart>();
+            if (fixedPart && fixedPart.state == FixedPart.State.Highlighted)
+            {
+                Destroy(part);
+                part = null;
+                fixedPart.state = FixedPart.State.Visible;
+            }
         }
 
         if (handController.controller.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
@@ -79,6 +93,7 @@ public class ColliderEvent : MonoBehaviour
             }
             else if (state == State.None && other.gameObject.layer == LayerMask.NameToLayer("Instruments"))
             {
+                part = GetComponent<Part>();
                 FixedJoint fx = gameObject.AddComponent<FixedJoint>();
                 fx.connectedBody = other.attachedRigidbody;
                 state = State.HoldingInstrument;
