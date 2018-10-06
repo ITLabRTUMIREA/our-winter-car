@@ -5046,6 +5046,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1037209522667110, guid: 359bf78430f9ac942b3fb0361b7dc047, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 359bf78430f9ac942b3fb0361b7dc047, type: 2}
   m_IsPrefabAsset: 0
@@ -5693,38 +5697,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parts:
   - {fileID: 934832160}
-  - {fileID: 701173137}
-  - {fileID: 1715072904}
   - {fileID: 2012759777}
   - {fileID: 415290812}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
-  - {fileID: 1172392836}
+  - {fileID: 2115032833}
+  - {fileID: 1235951488}
+  - {fileID: 701173137}
+  - {fileID: 1715072904}
+  - {fileID: 351233797}
+  - {fileID: 1942346646}
+  - {fileID: 156734548}
+  - {fileID: 123966500}
+  - {fileID: 760936011}
+  - {fileID: 565156463}
+  - {fileID: 1746705219}
+  - {fileID: 671891162}
+  - {fileID: 904485749}
+  - {fileID: 387386109}
+  - {fileID: 542123359}
+  - {fileID: 1009964071}
+  - {fileID: 75575519}
+  - {fileID: 316754208}
+  - {fileID: 1985488142}
+  - {fileID: 573789960}
+  - {fileID: 469110540}
+  - {fileID: 623566905}
+  - {fileID: 1922300435}
+  - {fileID: 993494312}
+  - {fileID: 1182785659}
+  - {fileID: 582586414}
+  - {fileID: 1156634311}
+  - {fileID: 255126760}
+  - {fileID: 1682951142}
   partIndex: 0
 --- !u!4 &1619484083 stripped
 Transform:
