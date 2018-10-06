@@ -41,6 +41,7 @@ public class ColliderEvent : MonoBehaviour
                 Destroy(fx);
                 state = State.None;
                 Debug.Log("HoldingPart -> None");
+                needHaptic = true; //
             }
 
             if (state == State.HoldingInstrument && GetComponent<FixedJoint>())
@@ -52,9 +53,12 @@ public class ColliderEvent : MonoBehaviour
                 Destroy(fx);
                 state = State.None;
                 Debug.Log("HoldingInstrument -> None");
+                needHaptic = true; //
             }
         }
     }
+
+    private bool needHaptic = true;
 
     void OnTriggerStay(Collider other)
     {
@@ -62,6 +66,9 @@ public class ColliderEvent : MonoBehaviour
         {
             return;
         }
+
+        if (needHaptic == true)
+            handController.controller.TriggerHapticPulse(700);
 
         if (handController.controller.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
         {
@@ -76,6 +83,7 @@ public class ColliderEvent : MonoBehaviour
                 fx.connectedBody = other.attachedRigidbody;
                 state = State.HoldingPart;
                 Debug.Log("HoldingPart");
+                needHaptic = false; //
             }
             else if (state == State.None && other.gameObject.layer == LayerMask.NameToLayer("Instruments"))
             {
@@ -83,6 +91,7 @@ public class ColliderEvent : MonoBehaviour
                 fx.connectedBody = other.attachedRigidbody;
                 state = State.HoldingInstrument;
                 Debug.Log("HoldingInstrument");
+                needHaptic = false; //
             }
         }
     }
