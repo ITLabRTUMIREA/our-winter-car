@@ -4,4 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Garage/zhiga.unity
+    guid: 6970a35bb2a63934a829b29284d0a7ad
+  m_configObjects: {}
