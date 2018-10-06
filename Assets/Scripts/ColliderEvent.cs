@@ -1,28 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class ColliderEvent : MonoBehaviour
 {
     public GameObject model;
 
-    HandController handController;
+    Hand handController;
+
+    bool isValid
+    {
+        get
+        {
+            return handController.controller != null;
+        }
+    }
 
     void Start()
     {
-        handController = GetComponent<HandController>();
+        handController = GetComponent<Hand>();
     }
 
     void Update()
     {
-        if (handController.device.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
+        if (isValid && handController.controller.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
         {
-            if (gameObject.GetComponent<SpringJoint>())
+            if (GetComponent<SpringJoint>())
             {
-                model.SetActive(true);
-                SpringJoint fx = gameObject.GetComponent<SpringJoint>();
-                fx.connectedBody.velocity = handController.device.velocity;
-                fx.connectedBody.angularVelocity = handController.device.angularVelocity;
+                //model.SetActive(true);
+                SpringJoint fx = GetComponent<SpringJoint>();
+                fx.connectedBody.velocity = handController.controller.velocity;
+                fx.connectedBody.angularVelocity = handController.controller.angularVelocity;
                 fx.connectedBody = null;
                 Destroy(fx);
             }
@@ -31,22 +40,14 @@ public class ColliderEvent : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (!handController.isValid)
+        if (!isValid)
         {
             return;
         }
 
-        if (handController.device.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
+        if (handController.controller.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
         {
-            if (gameObject.GetComponent<SpringJoint>())
-            {
-                SpringJoint fx = gameObject.GetComponent<SpringJoint>();
-                fx.connectedBody.velocity = handController.device.velocity;
-                fx.connectedBody.angularVelocity = handController.device.angularVelocity;
-                fx.connectedBody = null;
-                Destroy(fx);
-            }
-            else if (other.gameObject.layer == LayerMask.NameToLayer("Parts"))
+            if (GetComponent<SpringJoint>() == null && other.gameObject.layer == LayerMask.NameToLayer("Parts"))
             {
                 SpringJoint fx = gameObject.AddComponent<SpringJoint>();
                 fx.spring = 600.0f;
@@ -69,6 +70,7 @@ public class ColliderEvent : MonoBehaviour
                     other.attachedRigidbody.angularVelocity = GetComponent<Rigidbody>().velocity;
                 }*/
             }
+            /*
             else if (gameObject.GetComponent<FixedJoint>())
             {
                 other.attachedRigidbody.isKinematic = false;
@@ -89,7 +91,7 @@ public class ColliderEvent : MonoBehaviour
                 other.attachedRigidbody.isKinematic = true;
                 //other.gameObject.transform.parent = transform;
                 //other.gameObject.transform.localPosition = Vector3.zero;
-            }
+            }*/
 
         }
     }
