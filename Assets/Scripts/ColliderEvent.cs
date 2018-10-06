@@ -32,7 +32,7 @@ public class ColliderEvent : MonoBehaviour
 
     void Update()
     {
-        if (isValid && handController.controller.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
+        if (isValid && handController.controller.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
         {
             if (state == State.HoldingPart && GetComponent<SpringJoint>())
             {
@@ -88,16 +88,17 @@ public class ColliderEvent : MonoBehaviour
                 {
                     Destroy(fixedJoint);
                 }
-
                 if (springJoint)
                 {
                     Destroy(springJoint);
                 }
+
+                ConstructionManager.instance.NextHint();
                 state = State.None;
             }
         }
 
-        if (handController.controller.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
+        if (handController.controller.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
             SpringJoint springJoint = GetComponent<SpringJoint>();
             FixedJoint fixedJoint = GetComponent<FixedJoint>();
