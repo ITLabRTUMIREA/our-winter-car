@@ -13,7 +13,7 @@ public class ColliderEvent : MonoBehaviour
     }
 
     Hand handController;
-    State state;
+    State state = State.None;
 
     bool isValid
     {
@@ -30,17 +30,28 @@ public class ColliderEvent : MonoBehaviour
 
     void Update()
     {
-        if (state == State.HoldingPart &&
-            isValid && handController.controller.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
+        if (isValid && handController.controller.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
         {
-            if (GetComponent<SpringJoint>())
+            if (state == State.HoldingPart && GetComponent<SpringJoint>())
             {
                 SpringJoint fx = GetComponent<SpringJoint>();
-                fx.connectedBody.velocity = handController.controller.velocity;
-                fx.connectedBody.angularVelocity = handController.controller.angularVelocity;
+                fx.connectedBody.velocity = -handController.controller.velocity;
+                fx.connectedBody.angularVelocity = -handController.controller.angularVelocity;
                 fx.connectedBody = null;
                 Destroy(fx);
                 state = State.None;
+                Debug.Log("HoldingPart -> None");
+            }
+
+            if (state == State.HoldingInstrument && GetComponent<FixedJoint>())
+            {
+                FixedJoint fx = gameObject.GetComponent<FixedJoint>();
+                fx.connectedBody.velocity = -handController.controller.velocity;
+                fx.connectedBody.angularVelocity = -handController.controller.angularVelocity;
+                fx.connectedBody = null;
+                Destroy(fx);
+                state = State.None;
+                Debug.Log("HoldingInstrument -> None");
             }
         }
     }
@@ -57,32 +68,21 @@ public class ColliderEvent : MonoBehaviour
             SpringJoint springJoint = GetComponent<SpringJoint>();
             FixedJoint fixedJoint = GetComponent<FixedJoint>();
 
-            if (state == State.None &&
-                springJoint == null &&
-                fixedJoint == null && 
-                other.gameObject.layer == LayerMask.NameToLayer("Parts"))
+            if (state == State.None && other.gameObject.layer == LayerMask.NameToLayer("Parts"))
             {
                 SpringJoint fx = gameObject.AddComponent<SpringJoint>();
                 fx.spring = 600.0f;
                 fx.damper = 100.0f;
                 fx.connectedBody = other.attachedRigidbody;
                 state = State.HoldingPart;
-            }
-            else if (state == State.HoldingInstrument &&
-                     fixedJoint)
-            {
-                FixedJoint fx = gameObject.GetComponent<FixedJoint>();
-                fx.connectedBody.velocity = handController.controller.velocity;
-                fx.connectedBody.angularVelocity = handController.controller.angularVelocity;
-                fx.connectedBody = null;
-                Destroy(fx);
-                state = State.None;
+                Debug.Log("HoldingPart");
             }
             else if (state == State.None && other.gameObject.layer == LayerMask.NameToLayer("Instruments"))
             {
                 FixedJoint fx = gameObject.AddComponent<FixedJoint>();
                 fx.connectedBody = other.attachedRigidbody;
                 state = State.HoldingInstrument;
+                Debug.Log("HoldingInstrument");
             }
         }
     }
