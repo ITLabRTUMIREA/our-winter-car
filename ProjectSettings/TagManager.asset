@@ -3,7 +3,40 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - part_bridge
+  - part_arm_stabilizer_l
+  - part_arm_stabilizer_r
+  - part_knuckle_l
+  - part_knuckle_r
+  - part_lower_arm_l
+  - part_lower_arm_r
+  - part_lower_arm_pivot_l
+  - part_lower_arm_pivot_r
+  - part_lower_boot_l
+  - part_lower_boot_r
+  - part_shock_absorber_l
+  - part_shock_absorber_r
+  - part_upper_arm_l
+  - part_upper_arm_r
+  - part_upper_boot_l
+  - part_upper_boot_r
+  - part_lober_tube_l
+  - part_lober_tube_r
+  - part_lower_tube_socket_l
+  - part_lower_tube_socket_r
+  - part_rear_shock_absorber_l
+  - part_rear_shock_absorber_r
+  - part_rear_spring_l
+  - part_rear_spring_r
+  - part_upper_tube_l
+  - part_upper_tube_r
+  - part_wheel_socket_l
+  - part_wheel_socket_r
+  - part_wheel_fl
+  - part_wheel_fr
+  - part_wheel_rl
+  - part_wheel_rr
   layers:
   - Default
   - TransparentFX
@@ -13,11 +46,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Instruments
+  - Parts
+  - Player
+  - Controller
+  - Teleportable
   - 
   - 
   - 
