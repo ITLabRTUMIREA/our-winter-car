@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 64678620719726194}
   m_Layer: 8
   m_Name: UpperArm
-  m_TagString: Untagged
+  m_TagString: part_upper_arm_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

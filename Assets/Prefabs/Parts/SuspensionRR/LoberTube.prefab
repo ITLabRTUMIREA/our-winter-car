@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 64105409348763150}
   m_Layer: 8
   m_Name: LoberTube
-  m_TagString: Untagged
+  m_TagString: part_lober_tube_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

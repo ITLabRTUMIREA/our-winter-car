@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 64507100469127464}
   m_Layer: 8
   m_Name: WheelSocket
-  m_TagString: Untagged
+  m_TagString: part_wheel_socket_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

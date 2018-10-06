@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 64418870479068292}
   m_Layer: 8
   m_Name: LowerArmPivot
-  m_TagString: Untagged
+  m_TagString: part_lower_arm_pivot_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

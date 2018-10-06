@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 64574075021332260}
   m_Layer: 8
   m_Name: LowerBoot
-  m_TagString: Untagged
+  m_TagString: part_lower_boot_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

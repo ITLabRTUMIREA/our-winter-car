@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 64444001345980984}
   m_Layer: 8
   m_Name: ArmStabilizer
-  m_TagString: Untagged
+  m_TagString: part_arm_stabilizer_l
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

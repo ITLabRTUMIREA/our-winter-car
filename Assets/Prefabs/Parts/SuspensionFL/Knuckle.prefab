@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 64828166526630696}
   m_Layer: 8
   m_Name: Knuckle
-  m_TagString: Untagged
+  m_TagString: part_knuckle_l
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

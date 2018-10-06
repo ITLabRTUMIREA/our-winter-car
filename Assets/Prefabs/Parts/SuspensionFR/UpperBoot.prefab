@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 64469033239795866}
   m_Layer: 8
   m_Name: UpperBoot
-  m_TagString: Untagged
+  m_TagString: part_upper_boot_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -2210,7 +2210,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300096, guid: 3bae4ae3653d0e04da49451e092cd330, type: 3}
@@ -2665,7 +2665,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300104, guid: 3bae4ae3653d0e04da49451e092cd330, type: 3}
@@ -3974,7 +3974,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300102, guid: 3bae4ae3653d0e04da49451e092cd330, type: 3}
@@ -5499,6 +5499,122 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1514715357439290, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_bridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912435447905262, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_lower_arm_pivot_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624121511402680, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_arm_stabilizer_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912587533294664, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_knuckle_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751318649580282, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_lower_arm_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1849333848314214, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_lower_boot_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429420212569230, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_shock_absorber_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991370748489442, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_upper_arm_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701378706303586, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_upper_boot_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486400756402698, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_lower_arm_pivot_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305475996957364, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_arm_stabilizer_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617929552721428, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_knuckle_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122646172259106, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_lower_arm_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430182681086168, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_lower_boot_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944880463447996, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_shock_absorber_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1934597042816566, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_upper_arm_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131092551587268, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_upper_boot_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932394619759202, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_lober_tube_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1742363301429450, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_lower_tube_socket_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1861813405490352, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_rear_shock_absorber_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952224223512604, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_rear_spring_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489685842930368, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_upper_tube_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1458662835068368, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_wheel_socket_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042559246235424, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_lober_tube_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079166333936864, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_lower_tube_socket_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100962837774058, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_rear_shock_absorber_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656042389632928, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_rear_spring_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509696101056072, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_upper_tube_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 1522016442354224, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
+      propertyPath: m_TagString
+      value: part_wheel_socket_r
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fd002ea1bf23364785d6a132f43eb35, type: 2}
   m_IsPrefabAsset: 0
@@ -5547,7 +5663,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1748795178}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa3a864a46b32944b9d1244d416297aa, type: 3}
   m_Name: 
@@ -5561,7 +5677,7 @@ MeshCollider:
   m_GameObject: {fileID: 1748795178}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
@@ -6002,7 +6118,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1958370246}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa3a864a46b32944b9d1244d416297aa, type: 3}
   m_Name: 
@@ -6016,7 +6132,7 @@ MeshCollider:
   m_GameObject: {fileID: 1958370246}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
@@ -6268,7 +6384,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300106, guid: 3bae4ae3653d0e04da49451e092cd330, type: 3}
@@ -6559,7 +6675,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300098, guid: 3bae4ae3653d0e04da49451e092cd330, type: 3}

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 64399947227391282}
   m_Layer: 8
   m_Name: ShockAbsorber
-  m_TagString: Untagged
+  m_TagString: part_shock_absorber_l
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

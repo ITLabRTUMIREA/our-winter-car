@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 64267519925632154}
   m_Layer: 8
   m_Name: UpperTube
-  m_TagString: Untagged
+  m_TagString: part_upper_tube_l
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
