@@ -44,6 +44,7 @@ public class ConstructionManager : MonoBehaviour
             {
                 parts[i].SetHintEnabled(true);
                 GameObject[] otherParts = GameObject.FindGameObjectsWithTag(parts[i].tag);
+
                 foreach (GameObject part in otherParts)
                 {
                     FixedPart fixedPart = part.GetComponent<FixedPart>();

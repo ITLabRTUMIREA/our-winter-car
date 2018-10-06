@@ -51,16 +51,11 @@ public class FixedPart : MonoBehaviour
     }
     State _currentState = State.Visible;
 
-    void Awake()
-    {
-        Debug.Log(_highlightMaterial == null);
-    }
-
-	void Start ()
+	void Awake ()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
         _materials = _meshRenderer.materials;
 
-        state = State.Highlighted;
+        state = State.Disabled;
 	}
 }
