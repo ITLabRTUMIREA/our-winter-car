@@ -6,13 +6,11 @@ public class Part : MonoBehaviour
 {
     public Hint hint;
 
-	void Start ()
+    public void SetHintEnabled(bool enabled)
     {
-        
-	}
-
-	void Update ()
-    {
-		
-	}
+        if (hint)
+        {
+            hint.enabled = enabled;
+        }
+    }
 }
