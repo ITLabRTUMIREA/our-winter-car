@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(LineRenderer)), ExecuteInEditMode]
-public class HintLine : MonoBehaviour
+public class Hint : MonoBehaviour
 {
 	[Header("Set by yourself")]
 	public string HintText = "No hints applied";
