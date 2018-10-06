@@ -75,12 +75,25 @@ public class ColliderEvent : MonoBehaviour
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Parts") && part != null)
         {
+            SpringJoint springJoint = GetComponent<SpringJoint>();
+            FixedJoint fixedJoint = GetComponent<FixedJoint>();
+
             FixedPart fixedPart = other.GetComponent<FixedPart>();
-            if (fixedPart && fixedPart.state == FixedPart.State.Highlighted)
+            if (fixedPart && fixedPart.state == FixedPart.State.Highlighted && other.tag == part.tag)
             {
-                Destroy(part);
+                Destroy(part.gameObject);
                 part = null;
                 fixedPart.state = FixedPart.State.Visible;
+                if (fixedJoint)
+                {
+                    Destroy(fixedJoint);
+                }
+
+                if (springJoint)
+                {
+                    Destroy(springJoint);
+                }
+                state = State.None;
             }
         }
 
@@ -101,7 +114,7 @@ public class ColliderEvent : MonoBehaviour
             }
             else if (state == State.None && other.gameObject.layer == LayerMask.NameToLayer("Instruments"))
             {
-                part = GetComponent<Part>();
+                part = other.GetComponent<Part>();
                 FixedJoint fx = gameObject.AddComponent<FixedJoint>();
                 fx.connectedBody = other.attachedRigidbody;
                 state = State.HoldingInstrument;
