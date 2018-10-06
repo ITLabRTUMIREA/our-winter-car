@@ -13,7 +13,6 @@ public class Hint : MonoBehaviour
 	public Transform target;
 	private LineRenderer _lineRenderer;
 	
-	
 	private Vector3 _offset;
 	
 	void Start ()

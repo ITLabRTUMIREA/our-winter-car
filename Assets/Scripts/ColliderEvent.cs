@@ -54,6 +54,7 @@ public class ColliderEvent : MonoBehaviour
                 fx.connectedBody = null;
                 Destroy(fx);
                 state = State.None;
+                part.SetHintEnabled(true);
                 part = null;
                 Debug.Log("HoldingInstrument -> None");
                 needHaptic = true; //
@@ -81,6 +82,7 @@ public class ColliderEvent : MonoBehaviour
             FixedPart fixedPart = other.GetComponent<FixedPart>();
             if (fixedPart && fixedPart.state == FixedPart.State.Highlighted && other.tag == part.tag)
             {
+                part.SetHintEnabled(false);
                 Destroy(part.gameObject);
                 part = null;
                 fixedPart.state = FixedPart.State.Visible;
@@ -116,6 +118,7 @@ public class ColliderEvent : MonoBehaviour
             else if (state == State.None && other.gameObject.layer == LayerMask.NameToLayer("Instruments"))
             {
                 part = other.GetComponent<Part>();
+                part.SetHintEnabled(false);
                 FixedJoint fx = gameObject.AddComponent<FixedJoint>();
                 fx.connectedBody = other.attachedRigidbody;
                 state = State.HoldingInstrument;

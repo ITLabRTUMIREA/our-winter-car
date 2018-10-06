@@ -10,7 +10,7 @@ public class Part : MonoBehaviour
     {
         if (hint)
         {
-            hint.enabled = enabled;
+            hint.gameObject.SetActive(enabled);
         }
     }
 }
