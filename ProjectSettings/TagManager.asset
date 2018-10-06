@@ -33,6 +33,10 @@ TagManager:
   - part_upper_tube_r
   - part_wheel_socket_l
   - part_wheel_socket_r
+  - part_wheel_fl
+  - part_wheel_fr
+  - part_wheel_rl
+  - part_wheel_rr
   layers:
   - Default
   - TransparentFX

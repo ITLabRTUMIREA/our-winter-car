@@ -13,8 +13,13 @@ public class Hint : MonoBehaviour
 	public Transform target;
 	private LineRenderer _lineRenderer;
 	
+	
+	private Vector3 _offset;
+	
 	void Start ()
 	{
+		_offset = target.position - transform.position;
+		
 		_lineRenderer = GetComponent<LineRenderer>();
 		_lineRenderer.positionCount = 2;
 		_lineRenderer.SetWidth(0.01f, 0.01f);
@@ -32,5 +37,7 @@ public class Hint : MonoBehaviour
 		
 		_lineRenderer.SetPosition(0, transform.position);
 		_lineRenderer.SetPosition(1, target.position);
+
+		transform.position = target.position + 1.0f * Vector3.up;
 	}
 }

@@ -9,5 +9,6 @@ public class Billboard : MonoBehaviour
 	private void FixedUpdate()
 	{
 		transform.LookAt(camera.transform);
+		
 	}
 }
