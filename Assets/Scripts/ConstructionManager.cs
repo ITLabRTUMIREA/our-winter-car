@@ -40,6 +40,11 @@ public class ConstructionManager : MonoBehaviour
 
         for (int i = 0; i < parts.Length; ++i)
         {
+            if (parts[i] == null)
+            {
+                continue;
+            }
+
             if (i == index)
             {
                 parts[i].SetHintEnabled(true);
