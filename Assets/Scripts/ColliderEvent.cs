@@ -5,9 +5,15 @@ using Valve.VR.InteractionSystem;
 
 public class ColliderEvent : MonoBehaviour
 {
-    public GameObject model;
+    enum State
+    {
+        None,
+        HoldingPart,
+        HoldingInstrument
+    }
 
     Hand handController;
+    State state;
 
     bool isValid
     {
@@ -24,16 +30,17 @@ public class ColliderEvent : MonoBehaviour
 
     void Update()
     {
-        if (isValid && handController.controller.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
+        if (state == State.HoldingPart &&
+            isValid && handController.controller.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
         {
             if (GetComponent<SpringJoint>())
             {
-                //model.SetActive(true);
                 SpringJoint fx = GetComponent<SpringJoint>();
                 fx.connectedBody.velocity = handController.controller.velocity;
                 fx.connectedBody.angularVelocity = handController.controller.angularVelocity;
                 fx.connectedBody = null;
                 Destroy(fx);
+                state = State.None;
             }
         }
     }
@@ -47,52 +54,36 @@ public class ColliderEvent : MonoBehaviour
 
         if (handController.controller.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
         {
-            if (GetComponent<SpringJoint>() == null && other.gameObject.layer == LayerMask.NameToLayer("Parts"))
+            SpringJoint springJoint = GetComponent<SpringJoint>();
+            FixedJoint fixedJoint = GetComponent<FixedJoint>();
+
+            if (state == State.None &&
+                springJoint == null &&
+                fixedJoint == null && 
+                other.gameObject.layer == LayerMask.NameToLayer("Parts"))
             {
                 SpringJoint fx = gameObject.AddComponent<SpringJoint>();
                 fx.spring = 600.0f;
                 fx.damper = 100.0f;
-                fx.breakForce = 20000;
-                fx.breakTorque = 20000;
                 fx.connectedBody = other.attachedRigidbody;
-
-                /*if (other.attachedRigidbody.isKinematic == false)
-                { 
-                    other.gameObject.transform.parent = transform;
-                    //other.gameObject.transform.localPosition = Vector3.zero;
-                    other.attachedRigidbody.isKinematic = true;
-                }
-                else
-                {
-                    other.attachedRigidbody.isKinematic = false;
-                    other.gameObject.transform.parent = null;
-                    other.attachedRigidbody.velocity = GetComponent<Rigidbody>().velocity;
-                    other.attachedRigidbody.angularVelocity = GetComponent<Rigidbody>().velocity;
-                }*/
+                state = State.HoldingPart;
             }
-            /*
-            else if (gameObject.GetComponent<FixedJoint>())
+            else if (state == State.HoldingInstrument &&
+                     fixedJoint)
             {
-                other.attachedRigidbody.isKinematic = false;
-                model.SetActive(true);
                 FixedJoint fx = gameObject.GetComponent<FixedJoint>();
-                fx.connectedBody.velocity = handController.device.velocity;
-                fx.connectedBody.angularVelocity = handController.device.angularVelocity;
+                fx.connectedBody.velocity = handController.controller.velocity;
+                fx.connectedBody.angularVelocity = handController.controller.angularVelocity;
                 fx.connectedBody = null;
                 Destroy(fx);
+                state = State.None;
             }
-            else if (other.gameObject.layer == LayerMask.NameToLayer("Instruments"))
+            else if (state == State.None && other.gameObject.layer == LayerMask.NameToLayer("Instruments"))
             {
                 FixedJoint fx = gameObject.AddComponent<FixedJoint>();
-                fx.breakForce = 20000;
-                fx.breakTorque = 20000;
                 fx.connectedBody = other.attachedRigidbody;
-                model.SetActive(false);
-                other.attachedRigidbody.isKinematic = true;
-                //other.gameObject.transform.parent = transform;
-                //other.gameObject.transform.localPosition = Vector3.zero;
-            }*/
-
+                state = State.HoldingInstrument;
+            }
         }
     }
 }
