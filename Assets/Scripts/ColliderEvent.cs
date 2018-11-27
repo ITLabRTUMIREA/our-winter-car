@@ -72,7 +72,7 @@ public class ColliderEvent : MonoBehaviour
         }
 
         if (needHaptic == true)
-            handController.controller.TriggerHapticPulse(700);
+            handController.controller.TriggerHapticPulse(200);
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Parts") && part != null)
         {

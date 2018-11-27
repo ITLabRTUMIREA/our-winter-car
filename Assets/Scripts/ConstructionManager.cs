@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ConstructionManager : MonoBehaviour
 {
@@ -24,6 +25,14 @@ public class ConstructionManager : MonoBehaviour
     void Start()
     {
         ActivatePart(partIndex);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     public void NextHint()
